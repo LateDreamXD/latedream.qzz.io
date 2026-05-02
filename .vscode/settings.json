@@ -1,0 +1,11 @@
+{
+  "js/ts.preferences.autoImportFileExcludePatterns": [
+    "lucide-react", // or
+    "lucide-preact", // or
+    "lucide-react-native", // or
+    "@lucide/vue",
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}

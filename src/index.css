@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+	@apply bg-[url('https://assets.latedream.qzz.io/images/background.webp')];
+}
+
+#app {
+	@apply w-screen h-screen;
+	@apply bg-white/50 dark:bg-black/50;
+}
