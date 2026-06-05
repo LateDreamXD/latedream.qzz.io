@@ -51,6 +51,6 @@ onMounted(async () => {
 				来之不易的，一定要好好珍惜。
 			</span>
 		</div>
-		<span class="text-transparent text-center" title="awa">这都被你发现了 awa</span>
+		<span class="text-transparent text-center select-text" title="awa">这都被你发现了 awa</span>
 	</div>
 </template>
