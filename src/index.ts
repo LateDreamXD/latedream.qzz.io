@@ -16,4 +16,4 @@ app.use(Viewer, {
 });
 app.mount('#app');
 
-document.documentElement.classList.toggle('dark', matchMedia('(prefers-color-scheme: dark)').matches);
+document.documentElement.classList.toggle('dark', true);
