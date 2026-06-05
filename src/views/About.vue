@@ -15,24 +15,24 @@ onMounted(async () => {
 
 <template>
 	<div class="flex flex-col h-full overflow-y-auto">
-		<div class="p-8 flex gap-4 w-full justify-around">
-			<img class="w-12 h-12 md:w-14 md:h-14 lg:w-24 lg:h-24 rounded-full" style="image-rendering: crisp-edges;" src="https://assets.latedream.qzz.io/avatars/latedream/current.webp"
-				title="查看历史头像" @click="$router.push('/avatars')" />
+		<div class="p-8 flex gap-4 w-full justify-around items-center">
 			<div class="flex items-center gap-8">
+				<img class="w-12 h-12 md:w-14 md:h-14 lg:w-24 lg:h-24 rounded-full" style="image-rendering: crisp-edges;" src="https://assets.latedream.qzz.io/avatars/latedream/current.webp"
+					title="查看历史头像" @click="$router.push('/avatars')" />
 				<div class="flex flex-col">
 					<span class="text-2xl font-bold">
 						晚梦
 					</span>
 					<span>LateDreamXD</span>
 				</div>
-				<span class="flex gap-4">
-					<template v-if="socials" v-for="item in socials" :key="item.platform">
-						<a v-if="typeof item._hide === 'undefined' || !item._hide" :href="item.url" class="hover:animate-bounce hover:animation-duration-200 hover:repeat-1">
-							<img :src="item.icon" class="w-6 h-6 drop-shadow-xs drop-shadow-white/20" />
-						</a>
-					</template>
-				</span>
 			</div>
+			<span class="flex gap-4">
+				<template v-if="socials" v-for="item in socials" :key="item.platform">
+					<a v-if="typeof item._hide === 'undefined' || !item._hide" :href="item.url" class="hover:animate-bounce hover:animation-duration-200 hover:repeat-1">
+						<img :src="item.icon" class="w-6 h-6 drop-shadow-xs drop-shadow-white/20" />
+					</a>
+				</template>
+			</span>
 		</div>
 		<div class="p-4 flex items-center justify-center">
 			<SkinViewer v-if="!error"
