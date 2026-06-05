@@ -1,9 +1,46 @@
 @import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
+@keyframes tooltip-slid-in {
+	from {
+		transform: translateY(24px);
+		display: none;
+	}
+	to {
+		transform: translateY(0);
+		display: block;
+	}
+}
+
+
+@keyframes tooltip-slid-in-bottom {
+	from {
+		transform: translateY(-24px);
+		display: none;
+	}
+	to {
+		transform: translateY(0);
+		display: block;
+	}
+}
+
+@theme {
+	--color-background: #0ff;
+
+	--animate-tooltip-slid-in: tooltip-slid-in 300ms;
+	--animate-tooltip-slid-in-bottom: tooltip-slid-in-bottom 300ms;
+}
+
+.dark {
+	color-scheme: dark;
+	--color-background: #000;
+}
+
 body {
 	@apply bg-[url('https://assets.latedream.qzz.io/images/background.webp')];
+	@apply bg-no-repeat bg-fixed bg-center bg-cover;
 }
 
 #app {

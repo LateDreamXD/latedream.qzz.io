@@ -3,14 +3,23 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 const routes: RouteRecordRaw[] = [
 	{
 		path: '/',
-		// component: () => import('@/views/Home.vue'),
+		name: 'Index',
 		redirect: '/about',
 	},
 	{
 		path: '/about',
+		name: 'About',
 		component: () => import('@/views/About.vue'),
-		beforeEnter() {
-			location.href = 'https://i.latedream.qzz.io';
+		meta: {
+			title: '关于我'
+		}
+	},
+	{
+		path: '/avatars',
+		name: 'Avatars',
+		component: () => import('@/views/Avatars.vue'),
+		meta: {
+			title: '我的历史头像'
 		}
 	}
 ];

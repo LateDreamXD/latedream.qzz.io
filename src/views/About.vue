@@ -1,34 +1,56 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import socials from '@/data/socials.json';
+import { ref, onMounted } from 'vue';
+import { fetchData } from '@/utils';
+import { SkinViewer, useSkinViewer } from '@daidr/minecraft-skin-renderer/vue3';
+import { WebGLRendererPlugin } from "@daidr/minecraft-skin-renderer/webgl";
 
-onMounted(() => {
+const socials = ref();
+
+const { error } = useSkinViewer();
+
+onMounted(async () => {
+	socials.value = await fetchData('socials');
 });
 </script>
 
 <template>
-	<div class="flex flex-col w-[50%] h-[50%] fixed left-[50%] top-[50%] translate-[-50%] *:[div]:shadow *:[div]:shadow-[#141414]/20">
-		<div class="bg-[#5a5a5a]/25 text-white border border-white/18 backdrop-blur-xl rounded-t-md flex justify-between items-center p-2">
-			<span class="title">晚梦</span>
-			<span class="flex items-center gap-2 *:[button]:hover:cursor-pointer *:[button]:disabled:cursor-not-allowed">
-				<button class="bg-[#64C355] w-4 h-4 rounded-full" title="最小化" disabled />
-				<button class="bg-[#F3C153] w-4 h-4 rounded-full" title="最大化" disabled />
-				<button class="bg-[#F1695A] w-4 h-4 rounded-full" title="关闭" />
+	<div class="flex flex-col h-full overflow-y-auto">
+		<div class="p-8 flex gap-4 w-full justify-around">
+			<img class="w-12 h-12 md:w-14 md:h-14 lg:w-24 lg:h-24 rounded-full" style="image-rendering: crisp-edges;" src="https://assets.latedream.qzz.io/avatars/latedream/current.webp"
+				title="查看历史头像" @click="$router.push('/avatars')" />
+			<div class="flex items-center gap-8">
+				<div class="flex flex-col">
+					<span class="text-2xl font-bold">
+						晚梦
+					</span>
+					<span>LateDreamXD</span>
+				</div>
+				<span class="flex gap-4">
+					<template v-if="socials" v-for="item in socials" :key="item.platform">
+						<a v-if="typeof item._hide === 'undefined' || !item._hide" :href="item.url" class="hover:animate-bounce hover:animation-duration-200 hover:repeat-1">
+							<img :src="item.icon" class="w-6 h-6 drop-shadow-xs drop-shadow-white/20" />
+						</a>
+					</template>
+				</span>
+			</div>
+		</div>
+		<div class="p-4 flex items-center justify-center">
+			<SkinViewer v-if="!error"
+				:plugins="[WebGLRendererPlugin]"
+				cape="https://textures.minecraft.net/texture/308b32a9e303155a0b4262f9e5483ad4a22e3412e84fe8385a0bdd73dc41fa89"
+				skin="https://textures.minecraft.net/texture/7054c9cf61f8a7d87d4d55b9c92901dc456a5eee4ca4b95d690dad16c4e09425"
+				animation="idle"
+				:rotation="{
+					phi: 1.4,
+					theta: -0.4
+				}"
+				slim
+				style="width: 120px; height: 240px;"
+			/>
+			<span class="p-4 h-fit font-bold bg-blue-400/20 rounded-sm">
+				来之不易的，一定要好好珍惜。
 			</span>
 		</div>
-		<div class="bg-black/25 text-amber-50/90 border border-white/20 backdrop-blur-md border-t-0 rounded-b-md flex-1">
-			<div class="p-4">
-				<img class="w-24 h-24 rounded-full" src="https://assets.latedream.qzz.io/avatars/latedream/current.webp" />
-				<span class="text-2xl font-bold mt-2">晚梦</span>
-			</div>
-			<div>
-				<template v-for="item in socials" :key="item.platform">
-					<span v-if="typeof item._hide || item._hide" class="flex items-center gap-2">
-						<i v-if="typeof item.icon === 'string' || item.icon.type === 'fa'" class="w-6 h-6 icon-solid" :class="typeof item.icon === 'string'? item.icon: item.icon.name" />
-						<img v-else :src="item.icon.url" class="w-6 h-6" />
-					</span>
-				</template>
-			</div>
-		</div>
+		<span class="text-transparent text-center" title="awa">这都被你发现了 awa</span>
 	</div>
 </template>

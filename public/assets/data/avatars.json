@@ -1,0 +1,62 @@
+{
+  "oc": {
+    "_name": "OC 系列",
+    "current": {
+      "name": "晚梦酱",
+      "used": "通用",
+      "file": "current.webp",
+      "mime": "image/webp",
+      "size": 35.1,
+      "pixel": 768,
+      "ai": "捏TA"
+    },
+    "loveyou": {
+      "name": "爱你",
+      "used": "曾用",
+      "file": "loveyou.webp",
+      "mime": "image/webp",
+      "size": 110,
+      "pixel": 1280,
+      "ai": "捏TA"
+    },
+    "sexy": {
+      "name": "涩涩",
+      "used": "QQ",
+      "file": "sexy.png",
+      "mime": "image/png",
+      "size": 477,
+      "pixel": 544,
+      "ai": "Gemini Nano Banana"
+    }
+  },
+  "classics": {
+    "_name": "经典系列",
+    "classic": {
+      "name": "经典",
+      "used": "通用",
+      "file": "classic.webp",
+      "mime": "image/webp",
+      "size": 35.2,
+      "pixel": 1280,
+      "ai": "Bigjpg"
+    },
+    "newyear": {
+      "name": "贺新春",
+      "used": "2025、2026农历春节",
+      "file": "classic_newyear.png",
+      "mime": "image/png",
+      "size": 344,
+      "pixel": 640,
+      "ai": false
+    },
+    "reverse": {
+      "name": "反转",
+      "used": "N/A",
+      "file": "classic_reverse.jpg",
+      "mime": "image/jpeg",
+      "size": 98.8,
+      "pixel": 1280,
+      "ai": "Bigjpg"
+    }
+  }
+}
