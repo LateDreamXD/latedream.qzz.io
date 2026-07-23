@@ -1,68 +1,58 @@
-[
-	{
-		"platform": "mc",
+{
+	"mc": {
 		"icon": "/assets/icons/mc.png",
 		"url": "https://namemc.com/profile/LateDreamXD",
 		"label": "LateDreamXD"
 	},
-	{
+	"gitee": {
 		"_hide": true,
-		"platform": "gitee",
 		"icon": "",
 		"url": "https://gitee.com/latedream",
 		"label": "晚梦"
 	},
-	{
-		"platform": "github",
+	"github": {
 		"icon": "/assets/icons/github.svg",
 		"url": "https://github.com/LateDreamXD",
 		"label": "LateDreamXD"
 	},
-	{
+	"steam": {
 		"_hide": true,
-		"platform": "steam",
 		"icon": "/assets/icons/steam.png",
 		"url": "https://steamcommunity.com/id/LateDream",
 		"label": "24岁清纯男高"
 	},
-	{
-		"platform": "xboxlive",
+	"xboxlive": {
 		"icon": "/assets/icons/xbox.png",
 		"url": "https://www.xbox.com/zh-CN/play/user/XiaozhiSans",
 		"label": "XiaozhiSans"
 	},
-	{
-		"platform": "bilibili",
+	"bilibili": {
 		"icon": "/assets/icons/bilibili.ico",
 		"uid": "1988506301",
 		"url": "https://space.bilibili.com/1988506301",
 		"label": "LateDreamXD"
 	},
-	{
+	"qq_old": {
 		"_hide": true,
-		"platform": "qq",
 		"icon": "",
 		"label": "3276839942",
 		"url": "https://qm.qq.com/cgi-bin/qm/qr?k=KKfdiq4HiNSB5qO5kMM2g6MJ5deWrh_u&jump_from=latedream.us.kg"
 	},
-	{
-		"platform": "qq",
+	"qq": {
 		"icon": "/assets/icons/qq.png",
 		"label": "3276839942",
 		"url": "https://qm.qq.com/q/Qcf8eIjkmO"
 	},
-	{
+	"email": {
 		"_hide": true,
-		"platform": "email",
 		"icon": "",
 		"url": "mailto:xiaozhisans@qq.com",
 		"label": "xiaozhisans@qq.com"
 	},
-	{
+	"discord": {
 		"_hide": true,
-		"platform": "discord",
 		"icon": "",
 		"url": "https://discord.gg/rFnKTUT7ab",
 		"label": "latedream"
 	}
-]
+}

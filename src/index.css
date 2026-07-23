@@ -5,36 +5,30 @@
 
 @keyframes tooltip-slid-in {
 	from {
-		transform: translateY(24px);
-		display: none;
+		transform: scale(0.7) translateY(var(--nd-slid-translate-y));
 	}
-	to {
-		transform: translateY(0);
-		display: block;
-	}
+	to {}
 }
 
-
-@keyframes tooltip-slid-in-bottom {
-	from {
-		transform: translateY(-24px);
-		display: none;
-	}
+@keyframes tooltip-slid-out {
+	from {}
 	to {
-		transform: translateY(0);
-		display: block;
+		transform: scale(0.7) translateY(var(--nd-slid-translate-y));
+		opacity: 0;
 	}
 }
 
 @theme {
+	--color-text: #000;
 	--color-background: #0ff;
 
 	--animate-tooltip-slid-in: tooltip-slid-in 300ms;
-	--animate-tooltip-slid-in-bottom: tooltip-slid-in-bottom 300ms;
+	--animate-tooltip-slid-out: tooltip-slid-out 300ms;
 }
 
 .dark {
 	color-scheme: dark;
+	--color-text: #fff;
 	--color-background: #000;
 }
 
@@ -46,4 +40,26 @@ body {
 #app {
 	@apply w-screen h-screen;
 	@apply bg-white/50 dark:bg-black/50;
+}
+
+.tippy-box[data-theme~='nightdream'] {
+	@apply p-2.5 rounded-md;
+	@apply bg-background/60 border border-background/80 dark:border-text/30;
+	@apply backdrop-blur-sm;
+}
+
+.tippy-box[data-theme~='nightdream'][data-placement^="top"] {
+	--nd-slid-translate-y: 24px;
+}
+
+.tippy-box[data-theme~='nightdream'][data-placement^="bottom"] {
+	--nd-slid-translate-y: -24px;
+}
+
+.tippy-box[data-theme~='nightdream'][data-animation='slid'][data-state='visible'] {
+	@apply animate-tooltip-slid-in;
+}
+
+.tippy-box[data-theme~='nightdream'][data-animation='slid'][data-state='hidden'] {
+	@apply animate-tooltip-slid-out;
 }
