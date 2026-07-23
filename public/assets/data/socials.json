@@ -1,9 +1,4 @@
 {
-	"mc": {
-		"icon": "/assets/icons/mc.png",
-		"url": "https://namemc.com/profile/LateDreamXD",
-		"label": "LateDreamXD"
-	},
 	"gitee": {
 		"_hide": true,
 		"icon": "",
@@ -15,8 +10,12 @@
 		"url": "https://github.com/LateDreamXD",
 		"label": "LateDreamXD"
 	},
+	"mc": {
+		"icon": "/assets/icons/mc.png",
+		"url": "https://namemc.com/profile/LateDreamXD",
+		"label": "LateDreamXD"
+	},
 	"steam": {
-		"_hide": true,
 		"icon": "/assets/icons/steam.png",
 		"url": "https://steamcommunity.com/id/LateDream",
 		"label": "24岁清纯男高"
@@ -43,16 +42,14 @@
 		"label": "3276839942",
 		"url": "https://qm.qq.com/q/Qcf8eIjkmO"
 	},
-	"email": {
-		"_hide": true,
-		"icon": "",
+	"email-qq": {
+		"icon": "https://res.wx.qq.com/t/webmail/webmail/res/static/images/mail/web/components/LoginBox/logo_app_20@2x.b90d16b.png",
 		"url": "mailto:xiaozhisans@qq.com",
 		"label": "xiaozhisans@qq.com"
 	},
 	"discord": {
-		"_hide": true,
-		"icon": "",
-		"url": "https://discord.gg/rFnKTUT7ab",
-		"label": "latedream"
+		"icon": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62fddf0fde45a8baedcc7ee5_847541504914fd33810e70a0ea73177e%20(2)-1.png",
+		"url": "https://discord.gg/FYxUcMngU8",
+		"label": "晚梦的 Discord 小窝"
 	}
 }

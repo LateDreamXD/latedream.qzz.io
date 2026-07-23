@@ -19,7 +19,7 @@ watch(() => route.meta, newVal => {
 		<div class="bg-[#5a5a5a]/25 text-white border border-white/18 backdrop-blur-xl rounded-t-md flex justify-between items-center p-2">
 			<span v-if="route.name === 'About'">{{ fullTitle }}</span>
 			<span v-else class="inline-flex gap-2">
-				<button class="hover:opacity-65 transition-opacity" @click="$router.back()">
+				<button class="hover:opacity-65 transition-opacity cursor-pointer" @click="$router.back()">
 					<ArrowLeftIcon />
 				</button>
 				{{ fullTitle }}
@@ -37,7 +37,7 @@ watch(() => route.meta, newVal => {
 		</div>
 	</div>
 
-	<footer class="fixed bottom-1 left-1 right-0 text-white">
+	<footer class="fixed bottom-1 left-1 right-1 text-white">
 		<div class="flex flex-col">
 			<a class="text-blue-300 hover:underline" href="https://icp.gov.moe/?keyword=20241144" target="_blank" rel="noopener">萌ICP备20241144号</a>
 			<span>&copy; 2026 晚梦，保留所有权利</span>

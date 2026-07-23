@@ -15,11 +15,10 @@ onMounted(async () => {
 
 <template>
 	<div class="flex flex-col h-full overflow-y-auto">
-		<div class="p-8 flex gap-4 w-full justify-around items-center">
+		<div class="p-8 flex flex-col md:flex-row gap-4 w-full justify-around items-center">
 			<div class="flex items-center gap-8">
 				<Tippy placement="bottom">
-					<img class="w-12 h-12 md:w-14 md:h-14 lg:w-24 lg:h-24 rounded-full"
-						style="image-rendering: crisp-edges;"
+					<img class="w-12 h-12 md:w-14 md:h-14 rounded-full"
 						src="https://assets.latedream.qzz.io/avatars/latedream/current.webp"
 						@click="$router.push('/avatars')" />
 					<template #content>
@@ -35,8 +34,8 @@ onMounted(async () => {
 			</div>
 			<span class="flex gap-4 relative">
 				<template v-if="socials" v-for="(item, id) of socials" :key="id">
-					<Tippy v-if="typeof item._hide === 'undefined' || !item._hide">
-						<a :href="item.url" class="hover:animate-bounce hover:animation-duration-200 hover:repeat-1">
+					<Tippy placement="bottom" v-if="typeof item._hide === 'undefined' || !item._hide">
+						<a :href="item.url" target="_blank" rel="noopener" class="hover:animate-bounce hover:animation-duration-200 hover:repeat-1">
 							<img :src="item.icon" class="w-6 h-6 drop-shadow-xs drop-shadow-white/20" />
 						</a>
 						<template #content>

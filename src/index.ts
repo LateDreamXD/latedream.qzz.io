@@ -22,7 +22,6 @@ app.use(VueTippy, {
 	directive: 'tippy',
 	defaultProps: {
 		animation: 'slid',
-		interactive: true,
 		placement: 'top',
 		theme: 'nightdream',
 		// followCursor: 'horizontal',
