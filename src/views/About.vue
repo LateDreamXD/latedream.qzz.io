@@ -35,7 +35,7 @@ onMounted(async () => {
 			<span class="flex gap-4 relative">
 				<template v-if="socials" v-for="(item, id) of socials" :key="id">
 					<Tippy placement="bottom" v-if="typeof item._hide === 'undefined' || !item._hide">
-						<a :href="item.url" target="_blank" rel="noopener" class="hover:animate-bounce hover:animation-duration-200 hover:repeat-1">
+						<a :href="item.url" target="_blank" rel="noopener">
 							<img :src="item.icon" class="w-6 h-6 drop-shadow-xs drop-shadow-white/20" />
 						</a>
 						<template #content>
