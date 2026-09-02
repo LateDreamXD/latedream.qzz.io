@@ -1,16 +1,22 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
+import { computed, ref, watch, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
+import { BAClickFX } from 'ba-click-fx';
 import { ArrowLeftIcon } from '@lucide/vue';
 
 const route = useRoute();
 
 const title = ref('关于我');
 const fullTitle = computed(() => `晚梦的个人页~ *2.0 | ${title.value}`);
+const clickFx = new BAClickFX({ trailAlways: true });
 
 watch(() => route.meta, newVal => {
 	if(newVal.title) title.value = newVal.title as string;
 	document.title = fullTitle.value;
+});
+
+onUnmounted(() => {
+	clickFx.destroy();
 });
 </script>
 

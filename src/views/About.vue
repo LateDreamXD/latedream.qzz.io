@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue';
 import { fetchData } from '@/utils';
 import { SkinViewer } from '@daidr/minecraft-skin-renderer/vue3';
 import { WebGLRendererPlugin } from "@daidr/minecraft-skin-renderer/webgl";
+import { HandCoinsIcon } from '@lucide/vue';
 
 const show3DSkin = ref(false);
 const socials = ref<Record<string, any>>({});
@@ -62,9 +63,12 @@ onMounted(async () => {
 						<span>切换 {{ show3DSkin ? '2D 图片' : '3D 渲染' }}</span>
 					</template>
 				</Tippy>
-				<span class="p-4 h-fit font-bold bg-blue-400/20 rounded-sm relative">
-					来之不易的，一定要好好珍惜。
-				</span>
+				<div class="p-4 h-fit bg-blue-400/20 rounded-sm relative flex flex-col gap-4">
+					<span class="font-bold">来之不易的，一定要好好珍惜。</span>
+					<div>
+						<router-link class="inline-flex gap-0.5 text-yellow-200 hover:underline" to="/sponsor"><HandCoinsIcon /> 投喂我</router-link>
+					</div>
+				</div>
 			</div>
 		</div>
 		<span class="text-transparent text-center select-text">这都被你发现了 awa</span>
