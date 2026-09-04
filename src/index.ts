@@ -28,5 +28,3 @@ app.use(VueTippy, {
 	}
 });
 app.mount('#app');
-
-document.documentElement.classList.toggle('dark', true);

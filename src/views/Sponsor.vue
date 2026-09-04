@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const qrcodes = [
-	['微信', '/assets/qrcode/wechat.png'],
-	['支付宝', '/assets/qrcode/alipay.jpg']
+	['微信', '/static/qrcode/wechat.png'],
+	['支付宝', '/static/qrcode/alipay.jpg']
 ];
 </script>
 
