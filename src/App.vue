@@ -2,6 +2,7 @@
 import { computed, ref, watch, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { BAClickFX } from 'ba-click-fx';
+import MusicPlayer from './components/MusicPlayer.vue';
 import { ArrowLeftIcon } from '@lucide/vue';
 
 const route = useRoute();
@@ -21,6 +22,8 @@ onUnmounted(() => {
 </script>
 
 <template>
+	<MusicPlayer />
+
 	<div class="fixed flex flex-col w-full h-fit top-[50%] translate-y-[-50%] md:w-[50%] md:h-[50%] md:left-[50%] md:translate-[-50%] *:[div]:shadow *:[div]:shadow-[#141414]/20 *:select-none">
 		<div class="bg-[#5a5a5a]/25 text-white border border-white/18 backdrop-blur-xl rounded-t-md flex justify-between items-center p-2">
 			<span v-if="route.name === 'About'">{{ fullTitle }}</span>
@@ -30,7 +33,7 @@ onUnmounted(() => {
 				</button>
 				{{ fullTitle }}
 			</span>
-			<span class="flex items-center gap-2 *:[button]:hover:cursor-pointer *:[button]:disabled:cursor-not-allowed">
+			<span class="flex items-center gap-2">
 				<button class="bg-[#64C355] w-4 h-4 rounded-full" disabled />
 				<button class="bg-[#F3C153] w-4 h-4 rounded-full" disabled />
 				<button class="bg-[#F1695A] w-4 h-4 rounded-full" disabled />

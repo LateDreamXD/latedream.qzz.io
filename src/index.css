@@ -34,7 +34,15 @@
 
 body {
 	@apply bg-[url('https://assets.latedream.qzz.io/images/background.webp')];
-	@apply bg-no-repeat bg-fixed bg-center bg-cover;
+	@apply bg-no-repeat bg-fixed bg-center bg-cover overflow-hidden;
+}
+
+button {
+	@apply cursor-pointer;
+}
+
+button:disabled {
+	@apply cursor-not-allowed;
 }
 
 #app {
