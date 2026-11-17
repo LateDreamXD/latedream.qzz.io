@@ -3,6 +3,7 @@ import { computed, ref, watch, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { BAClickFX } from 'ba-click-fx';
 import MusicPlayer from './components/MusicPlayer.vue';
+import LateDreamChan from './components/LateDream-Chan.vue';
 import { ArrowLeftIcon } from '@lucide/vue';
 
 const route = useRoute();
@@ -23,6 +24,7 @@ onUnmounted(() => {
 
 <template>
 	<MusicPlayer />
+	<LateDreamChan bubble="always" />
 
 	<div class="fixed flex flex-col w-full h-fit top-[50%] translate-y-[-50%] md:w-[50%] md:h-[50%] md:left-[50%] md:translate-[-50%] *:[div]:shadow *:[div]:shadow-[#141414]/20 *:select-none">
 		<div class="bg-[#5a5a5a]/25 text-white border border-white/18 backdrop-blur-xl rounded-t-md flex justify-between items-center p-2">
